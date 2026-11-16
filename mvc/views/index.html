@@ -1,0 +1,442 @@
+$def with (ranking)
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Virtual de Física — UTEC Académico</title>
+    <!-- Tipografías técnicas y manuscrita -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR SUPERIOR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="brand">
+                <span class="brand-badge">U</span>
+                <div class="brand-text">
+                    <span class="brand-sub">UTEC ACADÉMICO</span>
+                    <span class="brand-title">Laboratorio Virtual de Física</span>
+                </div>
+            </a>
+
+            <!-- Botón hamburguesa para móvil -->
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="#practicas">Prácticas</a></li>
+                    <li><a href="#como-funciona">Cómo funciona</a></li>
+                    <li><a href="#ranking">Ranking</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="/login" class="btn-nav-entrar">Entrar</a>
+                    <a href="/login" class="btn-nav-user" title="Perfil de alumno o docente">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 1: HERO PRINCIPAL -->
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <!-- Columna Izquierda -->
+                <div class="hero-copy">
+                    <div class="pill-tag">
+                        <span class="dot-green"></span>
+                        FÍSICA I • CUATRIMESTRE 2026
+                    </div>
+
+                    <h1 class="hero-title">
+                        Lanza. Mide.<br>
+                        <span class="underline-green">Repite.</span>
+                    </h1>
+
+                    <p class="hero-desc">
+                        Prácticas de física en tu celular o tu compu. Mueve las variables, mira qué pasa y sube en el ranking de tu grupo sin miedo a quemar multímetros.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="/login" class="btn btn-green">Entrar al laboratorio</a>
+                        <a href="#practicas" class="btn btn-outline">Ver las prácticas</a>
+                    </div>
+
+                    <p class="hero-calibration">
+                        <span class="arrow-diag">↗</span> calibrado con gravedad local de Tulancingo: <strong>g = 9.79 m/s²</strong>
+                    </p>
+                </div>
+
+                <!-- Columna Derecha: Ficha de Registro Experimental -->
+                <div class="hero-visual">
+                    <div class="polaroid-stack">
+                        <!-- Tarjeta trasera decorativa -->
+                        <div class="polaroid-back">
+                            <span class="xp-float">+95 XP</span>
+                            <div class="back-preview">
+                                <div class="back-label">Vista en simulador</div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta principal inclinada -->
+                        <div class="polaroid-card">
+                            <div class="tape tape-top"></div>
+                            <div class="polaroid-header">
+                                <span>REGISTRO EXPERIMENTAL #01</span>
+                                <span>CINEMÁTICA 2D</span>
+                            </div>
+
+                            <div class="polaroid-graph">
+                                <svg viewBox="0 0 320 185" class="svg-diagram" aria-label="Gráfica de tiro parabólico">
+                                    <!-- Cuadrícula suave -->
+                                    <defs>
+                                        <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e2e8f0" stroke-width="0.8"/>
+                                        </pattern>
+                                    </defs>
+                                    <rect x="28" y="12" width="275" height="145" fill="url(#smallGrid)" />
+                                    <!-- Ejes Y y X -->
+                                    <line x1="35" y1="150" x2="35" y2="18" stroke="#042a4a" stroke-width="2"/>
+                                    <polygon points="35,14 31,22 39,22" fill="#042a4a"/>
+                                    <line x1="35" y1="150" x2="296" y2="150" stroke="#042a4a" stroke-width="2"/>
+                                    <polygon points="300,150 292,146 292,154" fill="#042a4a"/>
+                                    <text x="42" y="27" font-family="JetBrains Mono" font-size="10" fill="#042a4a" font-weight="700">Y(m)</text>
+                                    <text x="268" y="142" font-family="JetBrains Mono" font-size="10" fill="#042a4a" font-weight="700">X(m)</text>
+
+                                    <!-- Parábola -->
+                                    <path d="M 35 150 Q 155 20 275 150" fill="none" stroke="#042a4a" stroke-width="2.3" stroke-dasharray="5,4"/>
+                                    <!-- Altura máxima -->
+                                    <line x1="155" y1="85" x2="155" y2="150" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3"/>
+                                    <circle cx="155" cy="85" r="4" fill="#066839"/>
+                                    <text x="162" y="83" font-family="JetBrains Mono" font-size="9.5" fill="#042a4a" font-weight="600">h_max = 8.2m</text>
+
+                                    <!-- Vector velocidad inicial -->
+                                    <line x1="35" y1="150" x2="88" y2="97" stroke="#dc2626" stroke-width="2.5"/>
+                                    <polygon points="92,93 82,96 89,103" fill="#dc2626"/>
+                                    <text x="68" y="118" font-family="JetBrains Mono" font-size="9.5" fill="#dc2626" font-weight="700">v₀ = 18 m/s</text>
+
+                                    <!-- Arco ángulo -->
+                                    <path d="M 60 150 A 25 25 0 0 0 53 132" fill="none" stroke="#042a4a" stroke-width="1.5"/>
+                                    <circle cx="35" cy="150" r="5" fill="#042a4a"/>
+                                    <circle cx="275" cy="150" r="4.5" fill="#066839"/>
+                                </svg>
+                            </div>
+
+                            <div class="polaroid-metrics">
+                                <div>
+                                    <div class="metric-main">θ = 45.0°</div>
+                                    <div class="metric-sub">g = 9.81 m/s²</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="metric-main">x_alcance = 32.4 m</div>
+                                    <div class="metric-ok">Error exp: 1.4%</div>
+                                </div>
+                            </div>
+
+                            <p class="handwritten-note">↗ ¡no le temas a fallar el primer tiro!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: ELIGE TU PRÁCTICA -->
+        <section id="practicas" class="section-practicas">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Elige tu práctica <span class="handwritten-inline">(o reprueba cinemática este corte)</span></h2>
+                </div>
+
+                <div class="practicas-grid">
+                    <!-- PRÁCTICA 1: CAÍDA LIBRE (Blanca) -->
+                    <article class="exp-card card-light">
+                        <div class="tape tape-card"></div>
+                        <div class="exp-top">
+                            <span class="exp-code">EXP-01</span>
+                            <span class="exp-xp badge-green">100 XP</span>
+                        </div>
+                        <h3>Caída libre</h3>
+                        <p class="exp-desc">Lanza esferas desde distintas alturas. Determina si el peso influye en el tiempo de impacto en el vacío.</p>
+
+                        <div class="exp-diagram box-light">
+                            <svg viewBox="0 0 260 115" class="svg-diagram">
+                                <text x="82" y="18" font-family="JetBrains Mono" font-size="9" fill="#042a4a" font-weight="600">h₀ = 25m</text>
+                                <circle cx="96" cy="36" r="13" fill="#b91c1c"/>
+                                <text x="96" y="40" font-family="JetBrains Mono" font-size="9" fill="#fff" text-anchor="middle" font-weight="700">m₁</text>
+                                <line x1="96" y1="53" x2="96" y2="88" stroke="#042a4a" stroke-width="1.5" stroke-dasharray="4,3"/>
+                                <text x="72" y="84" font-family="JetBrains Mono" font-size="9" fill="#042a4a">g ↓</text>
+                                <rect x="45" y="94" width="102" height="10" rx="2" fill="#042a4a"/>
+                                <rect x="172" y="74" width="72" height="16" rx="2" fill="#042a4a"/>
+                                <text x="208" y="85" font-family="JetBrains Mono" font-size="8" fill="#fff" text-anchor="middle">SENSOR PAD</text>
+                                <text x="208" y="102" font-family="JetBrains Mono" font-size="9" fill="#066839" text-anchor="middle" font-weight="700">Δt = 2.26s</text>
+                            </svg>
+                        </div>
+
+                        <ul class="exp-specs">
+                            <li><span>Altura inicial (h₀):</span><strong>1m – 100m</strong></li>
+                            <li><span>Masa testigo (m):</span><strong>0.1kg – 50kg</strong></li>
+                        </ul>
+
+                        <p class="exp-quote">“la masa no cambia la velocidad si no hay aire ;)”</p>
+                        <a href="/simulacion/1" class="btn-card btn-card-light">Probar práctica →</a>
+                    </article>
+
+                    <!-- PRÁCTICA 2: TIRO PARABÓLICO (Destacada Verde) -->
+                    <article class="exp-card card-featured">
+                        <div class="tape tape-card"></div>
+                        <div class="exp-top">
+                            <span class="exp-code code-dark">EXP-02 • MÁS JUGADA</span>
+                            <span class="exp-xp badge-white">120 XP</span>
+                        </div>
+                        <h3>Tiro parabólico</h3>
+                        <p class="exp-desc">Dispara proyectiles con el cañón neumático. Ajusta ángulo y velocidad de salida para atinarle a la diana del fondo.</p>
+
+                        <div class="exp-diagram box-white">
+                            <svg viewBox="0 0 260 115" class="svg-diagram">
+                                <line x1="15" y1="98" x2="245" y2="98" stroke="#042a4a" stroke-width="2"/>
+                                <!-- Cañón -->
+                                <g transform="translate(36,90) rotate(-38)">
+                                    <rect x="0" y="-6" width="28" height="12" rx="2" fill="#042a4a"/>
+                                </g>
+                                <circle cx="36" cy="92" r="7" fill="#b91c1c"/>
+                                <text x="64" y="88" font-family="JetBrains Mono" font-size="9" fill="#b91c1c" font-weight="700">θ=45°</text>
+                                <!-- Trayectoria -->
+                                <path d="M 55 74 Q 135 20 218 82" fill="none" stroke="#066839" stroke-width="2.2" stroke-dasharray="4,3"/>
+                                <text x="135" y="34" font-family="JetBrains Mono" font-size="9" fill="#042a4a" text-anchor="middle" font-weight="700">x_max = 68.3m</text>
+                                <!-- Diana -->
+                                <rect x="210" y="72" width="16" height="26" fill="none" stroke="#042a4a" stroke-width="1.5"/>
+                                <circle cx="218" cy="83" r="5" fill="#b91c1c"/>
+                            </svg>
+                        </div>
+
+                        <ul class="exp-specs specs-light">
+                            <li><span>Ángulo de disparo (θ):</span><strong>0° – 90°</strong></li>
+                            <li><span>Velocidad inicial (v₀):</span><strong>5 m/s – 50 m/s</strong></li>
+                        </ul>
+
+                        <p class="exp-quote quote-light">“el ángulo de 45° siempre rinde más alcance (demuéstralo en clase)”</p>
+                        <a href="/simulacion/2" class="btn-card btn-card-dark">Probar práctica →</a>
+                    </article>
+
+                    <!-- PRÁCTICA 3: PLANO INCLINADO (Azul Marino) -->
+                    <article class="exp-card card-navy">
+                        <div class="tape tape-card"></div>
+                        <div class="exp-top">
+                            <span class="exp-code code-green">EXP-03</span>
+                            <span class="exp-xp badge-green">150 XP</span>
+                        </div>
+                        <h3>Plano inclinado</h3>
+                        <p class="exp-desc">Desliza bloques sobre diferentes materiales de rampa con fricción estática y dinámica.</p>
+
+                        <div class="exp-diagram box-navy">
+                            <svg viewBox="0 0 260 115" class="svg-diagram">
+                                <!-- Rampa triangular -->
+                                <polygon points="30,98 225,98 225,28" fill="#062f54" stroke="#64748b" stroke-width="1.5"/>
+                                <text x="72" y="92" font-family="JetBrains Mono" font-size="8.5" fill="#cbd5e1">θ=24°</text>
+                                <!-- Bloque sobre rampa -->
+                                <g transform="translate(132,61) rotate(-20)">
+                                    <rect x="-16" y="-18" width="32" height="18" fill="#0b874b" stroke="#fff" stroke-width="1"/>
+                                    <!-- Vector Normal -->
+                                    <line x1="0" y1="-18" x2="0" y2="-40" stroke="#38bdf8" stroke-width="1.8"/>
+                                    <polygon points="0,-44 -3,-37 3,-37" fill="#38bdf8"/>
+                                    <text x="7" y="-33" font-family="JetBrains Mono" font-size="8.5" fill="#38bdf8">N</text>
+                                    <!-- Vector Fricción -->
+                                    <line x1="16" y1="-9" x2="38" y2="-9" stroke="#f87171" stroke-width="1.8"/>
+                                    <text x="22" y="-14" font-family="JetBrains Mono" font-size="8.5" fill="#f87171">f_k</text>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <ul class="exp-specs specs-light">
+                            <li><span>Coeficiente estático (μs):</span><strong>0.05 – 0.90</strong></li>
+                            <li><span>Coeficiente cinético (μk):</span><strong>0.02 – 0.75</strong></li>
+                        </ul>
+
+                        <p class="exp-quote quote-light">“si aumentas la lija no se mueve ni con empujón”</p>
+                        <a href="/simulacion/3" class="btn-card btn-card-white">Probar práctica →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: ASÍ SE JUEGA -->
+        <section id="como-funciona" class="section-steps">
+            <div class="container">
+                <div class="steps-header">
+                    <h2>Así se juega</h2>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="steps-grid">
+                    <!-- PASO 1 -->
+                    <div class="step-card">
+                        <div class="tape tape-card"></div>
+                        <div class="step-top">
+                            <span class="step-num">01</span>
+                            <span class="step-tag tag-outline">PASO UNO</span>
+                        </div>
+                        <h3>Únete con el código de tu grupo</h3>
+                        <p>Tu profe te pasa una clave única (ej. <kbd>UTEC-204</kbd>) y accedes con tu cuenta de alumno.</p>
+                        <div class="step-widget">
+                            <span>🔑 CLAVE: <strong>FIS-M3A</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- PASO 2 -->
+                    <div class="step-card">
+                        <div class="tape tape-card"></div>
+                        <div class="step-top">
+                            <span class="step-num">02</span>
+                            <span class="step-tag tag-soft-green">PASO DOS</span>
+                        </div>
+                        <h3>Ejecuta, mueve variables y repite</h3>
+                        <p>Sin miedo a romper equipo real de laboratorio. Tira la manzana 50 veces, cambia la gravedad de Júpiter y observa qué sucede en tiempo real.</p>
+                        <div class="step-widget slider-demo">
+                            <div class="slider-labels">
+                                <span>θ ÁNGULO</span>
+                                <strong>45.0°</strong>
+                            </div>
+                            <div class="slider-track">
+                                <div class="slider-fill"></div>
+                                <div class="slider-thumb"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PASO 3 -->
+                    <div class="step-card">
+                        <div class="tape tape-card"></div>
+                        <div class="step-top">
+                            <span class="step-num">03</span>
+                            <span class="step-tag tag-outline">PASO TRES</span>
+                        </div>
+                        <h3>Tu mejor intento suma XP</h3>
+                        <p>El sistema guarda tu simulación más exacta, calcula el porcentaje de error experimental y te asigna puntaje directo a la tabla de tu grupo.</p>
+                        <div class="step-widget widget-success">
+                            <span>ERROR &lt; 2%</span>
+                            <strong>+120 XP REGISTRADOS</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: MARCADOR GENERAL DE PRÁCTICAS (LEADERBOARD) -->
+        <section id="ranking" class="section-ranking">
+            <div class="container">
+                <div class="ranking-wrapper">
+                    <div class="ranking-header">
+                        <div>
+                            <span class="ranking-badge">GRUPO MECA-3A • FÍSICA APLICADA</span>
+                            <h2>Marcador General de Prácticas</h2>
+                            <p>Resultados consolidados al corte del Segundo Parcial.</p>
+                        </div>
+
+                        <div class="sticky-note">
+                            <div class="pin-red"></div>
+                            <p>“Intentos ilimitados antes de la fecha límite (Viernes 23:59). Solo cuenta tu mejor puntaje registrado.”</p>
+                            <span>— Ing. Ramírez (Titular)</span>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="ranking-table">
+                            <thead>
+                                <tr>
+                                    <th>POS</th>
+                                    <th>ALUMNO / MATRÍCULA</th>
+                                    <th>GRUPO</th>
+                                    <th>PRÁCTICAS</th>
+                                    <th class="text-right">MEJOR XP</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                $for idx, alumno in enumerate(ranking, start=1):
+                                    <tr class="$('row-leader' if idx == 1 else '')">
+                                        <td>
+                                            $if idx <= 3:
+                                                <span class="pos-box $('pos-first' if idx == 1 else '')">$idx</span>
+                                            $else:
+                                                <span class="pos-plain">$f"{idx:02d}"</span>
+                                        </td>
+                                        <td>
+                                            <div class="student-name">$alumno['nombre']</div>
+                                            <div class="student-mat">MAT: $alumno['matricula']</div>
+                                        </td>
+                                        <td>$alumno['grupo']</td>
+                                        <td>
+                                            <span class="status-pill $('pill-complete' if alumno['completadas'] >= 3 else 'pill-progress')">
+                                                $alumno['completadas'] / 3 Completadas
+                                            </span>
+                                        </td>
+                                        <td class="text-right xp-col">
+                                            $f"{int(alumno['mejor_xp']):,}" XP
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: CTA FINAL -->
+        <section class="section-cta">
+            <div class="container">
+                <div class="cta-banner">
+                    <div class="cta-content">
+                        <span class="cta-tag">ACCESO INMEDIATO • SIN INSTALACIÓN</span>
+                        <h2>¿Ya tienes tu código de grupo?</h2>
+                        <p>Pídeselo a tu profesor de física o prueba las simulaciones en modo libre sin guardar registro.</p>
+                    </div>
+                    <div class="cta-action">
+                        <a href="/login" class="btn-cta-white">Entrar al laboratorio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-info">
+                    <div class="footer-title-row">
+                        <strong>UTEC FÍSICA EXPERIMENTAL</strong>
+                        <span class="ver-badge">VER. 2.4-LAB</span>
+                    </div>
+                    <p>Universidad Tecnológica de Tulancingo • Tulancingo, Hidalgo</p>
+                    <p class="footer-mono">Registro de Instrumentación &amp; Protocolos de Telemetría Académica</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="#como-funciona">Guías de Calibración</a>
+                    <a href="#practicas">Normativa de Laboratorio</a>
+                    <a href="#ranking">Panel de Observadores</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 UTEC • DIVISIÓN DE INGENIERÍA Y CIENCIAS BÁSICAS</span>
+                <span>SISTEMA DE NOTAS Y SIMULACIÓN MECÁNICA</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
